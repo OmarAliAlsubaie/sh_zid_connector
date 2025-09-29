@@ -1,14 +1,14 @@
 {
-    "name": "ZID Odoo Integration | ZID Odoo Connector",
+    "name": "ZID Odoo Integration | ZID Odoo API",
     "author": "insightful-erp ",
     "website": "https://www.insightful-erp.com",
     "support": "support@insightful-erp.com",
     "version": "18.0.2.0.0",
     "license": "OPL-1",
     "category": "Extra Tools",
-    "summary": "ZID Odoo Connector - Seamless integration between ZID e-commerce platform and Odoo ERP. Import customers, products, and sales orders automatically with advanced synchronization features.",
+    "summary": "ZID Odoo API - Seamless integration between ZID e-commerce platform and Odoo ERP. Import customers, products, and sales orders automatically with advanced synchronization features.",
     "description": """
-ZID Odoo Connector - Complete Integration Solution
+ZID Odoo API - Complete Integration Solution
 
 Seamlessly connect your ZID e-commerce platform with Odoo ERP system. This powerful connector enables automatic synchronization of:
 
@@ -30,7 +30,7 @@ Perfect for businesses looking to streamline their e-commerce and ERP operations
     'depends': ['base', 'contacts', 'product', 'sale_management', 'delivery', 'account', 'stock'],
     'data': [
         # security
-        'security/sh_zid_connector_groups.xml',
+        'security/sh_zid_api_groups.xml',
         'security/ir.model.access.csv',
         # data
         'data/sh_zid_order_stage_data.xml',

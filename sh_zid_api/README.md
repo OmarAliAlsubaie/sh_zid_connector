@@ -1,6 +1,6 @@
 About
 ============
-You can import customers and products as well as import sale orders using ZID Odoo Connector. That simplifies the integration and synchronization of data between Zid and Odoo. By improving data accuracy and efficiency, the connector helps businesses enhance their overall operational performance. We offer an automated import feature, allowing you to effortlessly import customers, products, and orders automatically. This streamlined approach saves you valuable time and effort and ensures a smooth workflow.
+You can import customers and products as well as import sale orders using ZID Odoo API. That simplifies the integration and synchronization of data between Zid and Odoo. By improving data accuracy and efficiency, the API helps businesses enhance their overall operational performance. We offer an automated import feature, allowing you to effortlessly import customers, products, and orders automatically. This streamlined approach saves you valuable time and effort and ensures a smooth workflow.
 
 Installation
 ============
