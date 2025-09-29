@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="sh_zid_res_partner_form_view" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="zid_id" readonly="1" invisible="0" />
+            </field>
+            <xpath expr="//h1" position="after">
+                <h1>
+                    <field id="sh_zid_arabic_name" class="text-break" name="sh_zid_arabic_name" default_focus="1" />
+                </h1>
+            </xpath>
+            <field name="function" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

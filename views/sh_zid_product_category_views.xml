@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Tree view for "model" -->
+        <record id="view_zid_stage_tree" model="ir.ui.view">
+            <field name="name">sh.zid.product.category.tree</field>
+            <field name="model">sh.zid.product.category</field>
+            <field name="type">list</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <list string="model_tree" create="true" delete="true" edit="true">
+                    <field name="name" />
+                    <field name="sequence" />
+                </list>
+            </field>
+        </record>
+
+        <!-- Form view for "model" -->
+        <record id="view_zid_product_category_form" model="ir.ui.view">
+            <field name="name">sh.zid.product.category.form</field>
+            <field name="model">sh.zid.product.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="model_form" create="true" delete="true" edit="true">
+                    <sheet>
+                        <group string="Zid Order Stage">
+                            <field name="name" />
+                            <field name="parent_id" />
+                            <field name="parent_path" />
+                            <field name="sequence" />
+                            <field name="product_tmpl_ids" />
+                            <field name="website_description" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Main window action for "model" -->
+        <record id="action_zid_product_category_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Zid Product Category</field>
+            <field name="res_model">sh.zid.product.category</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ========================== Authorize ========================== -->
+
+        <!-- FORM -->
+        <record id="view_zid_config_form" model="ir.ui.view">
+            <field name="name">sh_zid_config.view.tree</field>
+            <field name="model">zid.config</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <form string="model_form" create="true" delete="true" edit="true">
+                    <header>
+                        <button name="open_auth" string="Authentication" type="object" class="oe_highlight" />
+                        <button type="object" class="btn btn-primary" name="get_basic_thing" string="Import Basic Things" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group string="Zid configuration">
+                            <field name="name" />
+                            <field name="client_id" string="Client ID" groups="sh_zid_connector.sh_zid_base_manager" />
+                            <field name="client_secret" groups="sh_zid_connector.sh_zid_base_manager" password="1" />
+                            <field name="zid_redirect_url" groups="sh_zid_connector.sh_zid_base_manager" />
+                            <field name="access_token" widget="text" style="word-break: break-word;" invisible="1" />
+                            <field name="authorization" widget="text" style="word-break: break-word;" invisible="1" />
+                            <field name="refresh_token" widget="text" style="word-break: break-word;" invisible="1" />
+                        </group>
+                        <notebook></notebook>
+                        <h2 class="text-primary mt-2 mb-2">Log History</h2>
+                        <field name="log_historys" readonly="1">
+                            <list decoration-success="state=='success'" decoration-danger="state=='error'">
+                                <field name="field_type" />
+                                <field name="operation" />
+                                <field name="error" />
+                                <field name="datetime" />
+                                <field name="state" />
+                            </list>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record id="sh_zid_config_view_tree" model="ir.ui.view">
+            <field name="name">sh_zid_config.view.tree</field>
+            <field name="model">zid.config</field>
+            <field name="type">list</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <list string="model_tree" create="true" delete="true" edit="true">
+                    <field name="name" />
+                </list>
+            </field>
+        </record>
+
+        <!-- ACTION-->
+        <record id="action_sh_zid_config" model="ir.actions.act_window">
+            <field name="name">Authorize</field>
+            <field name="res_model">zid.config</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add new zid configuration
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

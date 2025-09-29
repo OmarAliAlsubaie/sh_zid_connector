@@ -1,0 +1,25 @@
+<odoo>
+    <!-- Main menu for "model" -->
+    <!-- <record id="menu_zid" model="ir.ui.menu">
+        <field name="name">Zid</field>
+        <field name="sequence" eval="10" />
+    </record> -->
+    <menuitem name="Zid" id="menu_zid" sequence="1" />
+
+    <!-- Parent Menus -->
+    <menuitem name="Authorize" id="menu_authorize" parent="menu_zid" action="sh_zid_connector.action_sh_zid_config" sequence="1" />
+    <menuitem name="Queue" id="sh_zid_queue_menu" parent="menu_zid" sequence="2" groups="sh_zid_connector.sh_zid_base_manager" />
+    <menuitem name="Configuration" id="sh_zid_config" parent="menu_zid" sequence="5" groups="sh_zid_connector.sh_zid_base_manager" />
+    <menuitem name="Logger" action="sh_zid_log_action" id="sh_log_item" parent="menu_zid" sequence="4" groups="sh_zid_connector.sh_zid_base_manager" />
+
+    <!-- Sub Menus -->
+    <menuitem name="Customer Queue" id="sh_zid_customer_queue_menu" action="sh_zid_customer_queue_action" parent="sh_zid_connector.sh_zid_queue_menu" sequence="2" />
+    <menuitem name="Product Queue" id="sh_zid_product_queue" action="sh_zid_product_queue_action" parent="sh_zid_connector.sh_zid_queue_menu" sequence="3" />
+    <menuitem name="Order Queue" id="sh_zid_order_queue" action="sh_zid_order_queue_action" parent="sh_zid_connector.sh_zid_queue_menu" sequence="4" />
+
+    <menuitem name="Zid Order Stages" id="sh_zid_stages" action="action_zid_stage_act_window" parent="sh_zid_connector.sh_zid_config" sequence="4" />
+    <menuitem name="Zid Product Category" id="sh_zid_product_category" action="action_zid_product_category_act_window" parent="sh_zid_connector.sh_zid_config" sequence="5" />
+
+    <!-- sale order Work Flow Menu -->
+    <menuitem name="Auto Sales Workflow zid" id="sh_auto_sale_workflow_new_menu_zid" action="sh_auto_sale_workflow_action_zid" parent="sh_zid_connector.sh_zid_config" sequence="7" />
+</odoo>

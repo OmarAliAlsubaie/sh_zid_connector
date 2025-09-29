@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Import Customer From Queue -->
+        <record id="sh_customer_queue_cron" model="ir.cron">
+            <field name="name">Import Customer From Queue</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <!-- <field name="numbercall">-1</field> -->
+            <!-- <field name="doall" eval="False" /> -->
+            <field name="model_id" ref="sh_zid_connector.model_zid_config" />
+            <field name="code">model.manage_import_customer()</field>
+            <field name="state">code</field>
+        </record>
+
+        <!-- Import Product From Queue -->
+        <record id="sh_product_queue_cron" model="ir.cron">
+            <field name="name">Import Product From Queue</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <!-- <field name="numbercall">-1</field> -->
+            <!-- <field name="doall" eval="False" /> -->
+            <field name="model_id" ref="sh_zid_connector.model_zid_config" />
+            <field name="code">model.manage_import_product()</field>
+            <field name="state">code</field>
+        </record>
+
+        <!-- Import Order From Queue -->
+        <record id="sh_order_queue_cron" model="ir.cron">
+            <field name="name">Import Order From Queue</field>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <!-- <field name="numbercall">-1</field> -->
+            <!-- <field name="doall" eval="False" /> -->
+            <field name="model_id" ref="sh_zid_connector.model_zid_config" />
+            <field name="code">model.manage_import_order()</field>
+            <field name="state">code</field>
+        </record>
+
+        <!-- Import Order To Queue -->
+        <record id="sh_order_import_from_zid_queue_cron" model="ir.cron">
+            <field name="name">Import Order To Queue</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <!-- <field name="numbercall">-1</field> -->
+            <!-- <field name="doall" eval="False" /> -->
+            <field name="model_id" ref="sh_zid_connector.model_zid_config" />
+            <field name="code">model.manage_import_order_from_zid()</field>
+            <field name="state">code</field>
+        </record>
+
+    </data>
+</odoo>

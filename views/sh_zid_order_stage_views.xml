@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Tree view for "model" -->
+        <record id="view_zid_stage_tree" model="ir.ui.view">
+            <field name="name">sh.zid.order.stage.tree</field>
+            <field name="model">sh.zid.order.stage</field>
+            <field name="type">list</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <list string="model_tree" create="true" delete="true" edit="true">
+                    <field name="name" />
+                    <field name="sequence" />
+                </list>
+            </field>
+        </record>
+
+        <!-- Main window action for "model" -->
+        <record id="action_zid_stage_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Zid Order Stages</field>
+            <field name="res_model">sh.zid.order.stage</field>
+            <field name="context">{'create': False, 'edit': False, 'delete': False}</field>
+            <field name="view_mode">list</field>
+        </record>
+
+    </data>
+</odoo>

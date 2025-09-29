@@ -1,0 +1,13 @@
+<odoo>
+
+    <!-- Manually Import From Queue -->
+    <record model="ir.actions.server" id="sh_zid_customer_queue">
+        <field name="name">Manually Import</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_sh_zid_queue" />
+        <field name="binding_model_id" ref="model_sh_zid_queue" />
+        <field name="state">code</field>
+        <field name="code">action = records.import_zid_manually()</field>
+    </record>
+
+</odoo>

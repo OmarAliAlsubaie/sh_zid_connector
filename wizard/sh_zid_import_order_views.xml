@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sh_zid_import_order_wizard_form" model="ir.ui.view">
+        <field name="name">Zid Import Order</field>
+        <field name="model">sh.zid.import.order</field>
+        <field name="arch" type="xml">
+            <form string="Import Order">
+                <group>
+                    <group>
+                        <field name="zid_order_filter" />
+                        <!-- <field name="sh_from_date_order" attrs="{'invisible':[('zid_order_filter','!=','import_by_date')],'required':[('zid_order_filter','=','import_by_date')]}" /> -->
+                        <field name="sh_from_date_order" invisible="zid_order_filter != 'import_by_date'" required="zid_order_filter == 'import_by_date'" />
+                        <!-- <field name="sh_zid_ids" attrs="{'invisible':[('zid_order_filter','!=','import_by_id')],'required':[('zid_order_filter','=','import_by_id')]}" /> -->
+                        <field name="sh_zid_ids" invisible="zid_order_filter != 'import_by_id'" required="zid_order_filter == 'import_by_id'" />
+                    </group>
+                    <group>
+                        <field name="sh_zid_stage_ids" widget="many2many_tags" options="{'no_create': True}" />
+                        <!-- <field name="sh_to_date_order" attrs="{'invisible':[('zid_order_filter','!=','import_by_date')],'required':[('zid_order_filter','=','import_by_date')]}" /> -->
+                        <field name="sh_to_date_order" invisible="zid_order_filter != 'import_by_date'" required="zid_order_filter == 'import_by_date'" />
+                    </group>
+                </group>
+
+                <footer>
+                    <button string="Sync Order" name="get_orders" type="object" class="btn-primary" />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sh_zid_import_order_wizard_action" model="ir.actions.act_window">
+        <field name="name">Zid Import Order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sh.zid.import.order</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

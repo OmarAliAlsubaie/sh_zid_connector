@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sh_zid_stage_new" model="sh.zid.order.stage">
+            <field name="name">new</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="sh_zid_stage_preparing" model="sh.zid.order.stage">
+            <field name="name">preparing</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="sh_zid_stage_ready" model="sh.zid.order.stage">
+            <field name="name">ready</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="sh_zid_stage_indelivery" model="sh.zid.order.stage">
+            <field name="name">indelivery</field>
+            <field name="sequence">4</field>
+        </record>
+        <record id="sh_zid_stage_delivered" model="sh.zid.order.stage">
+            <field name="name">delivered</field>
+            <field name="sequence">5</field>
+        </record>
+        <record id="sh_zid_stage_cancelled" model="sh.zid.order.stage">
+            <field name="name">cancelled</field>
+            <field name="sequence">6</field>
+        </record>
+    </data>
+</odoo>

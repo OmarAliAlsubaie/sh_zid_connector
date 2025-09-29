@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- <record id="sh_sale_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Auto Sale Workflow Settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml"> -->
+
+                            <!-- <label for="workflow_id" attrs="{'invisible':[('group_auto_sale_workflow', '=', False)]}" /> -->
+                            <!-- <field name="workflow_id" attrs="{'invisible':[('group_auto_sale_workflow', '=', False)]}" /> -->
+            <!-- <xpath expr="//div[@data-key='sale_management']" position="inside">
+                <h2>Auto Sale Workflow Settings</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="group_auto_sale_workflow" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="group_auto_sale_workflow" />
+                            <div class="text-muted"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"></div>
+                        <div class="o_setting_right_pane">
+                            <label for="workflow_id" invisible="not group_auto_sale_workflow" />
+                            <field name="workflow_id" invisible="not group_auto_sale_workflow" />
+                        </div>
+                    </div>
+
+                </div>
+            </xpath> -->
+
+            <!-- =========================================================== -->
+
+
+        <!-- </field>
+    </record> -->
+
+    <!-- Auto Sale Workflow Settings -->
+    <record id="sh_sale_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Auto Sale Workflow Settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='sale_management']//block[@name='catalog_setting_container']" position="after">
+                <block title="Auto Sale Workflow Settings" name="sh_zid_auto_sale_workflow">
+                    <setting id="sh_field_auto_sale_workflow">
+                        <field name="group_auto_sale_workflow"/>
+                    </setting>
+                    <setting id="sh_field_workflow_id">
+                        <field name="workflow_id"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

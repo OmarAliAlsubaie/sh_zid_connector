@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='sh_zid_log_tree' model='ir.ui.view'>
+        <field name="name">sh.zid.log.tree</field>
+        <field name="model">sh.zid.base.log</field>
+        <field name="arch" type="xml">
+            <list decoration-success="state=='success'" decoration-danger="state=='error'">
+                <field name="name" />
+                <field name="error" />
+                <field name="operation" />
+                <field name="datetime" />
+                <field name="state" />
+            </list>
+        </field>
+    </record>
+
+    <record id="sh_zid_log_action" model="ir.actions.act_window">
+        <field name="name">Logger</field>
+        <field name="res_model">sh.zid.base.log</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="context">{'create': False}</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Logger
+            </p>
+        </field>
+    </record>
+
+</odoo>

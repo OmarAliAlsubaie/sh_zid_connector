@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Auto sale workflow Zid -->
+        <record id="sh_zid_group_auto_sale_workflow" model="res.groups">
+            <field name="name">Auto sale workflow Zid</field>
+            <field name="category_id" ref="base.module_category_hidden" />
+        </record>
+        <record id="sh_zid_base_manager" model="res.groups">
+            <field name="name">Zid Configuration</field>
+        </record>
+    </data>
+</odoo>
