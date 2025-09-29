@@ -3,7 +3,7 @@
     "author": "insightful-erp ",
     "website": "https://www.insightful-erp.com",
     "support": "support@insightful-erp.com",
-    "version": "18.0.2.0.0",
+    "version": "17.0.2.0.0",
     "license": "OPL-1",
     "category": "Extra Tools",
     "summary": "ZID Odoo Connector - Seamless integration between ZID e-commerce platform and Odoo ERP. Import customers, products, and sales orders automatically with advanced synchronization features.",
